@@ -1,3 +1,5 @@
 lib <- Sys.getenv("R_LIBS_USER")
-if (nzchar(lib)) .libPaths(c(lib, .libPaths()))
+if (!nzchar(lib)) Sys.setenv(R_LIBS_USER = "C:/Users/miche/AppData/Local/R/win-library/4.5")
+.libPaths(c(Sys.getenv("R_LIBS_USER"), .libPaths()))
+options(shiny.host = "127.0.0.1", shiny.port = 54321)
 shiny::runApp("interface", launch.browser = TRUE)
