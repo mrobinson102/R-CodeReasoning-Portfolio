@@ -20,7 +20,7 @@ jobs:
           r-version: '4.3.2'
 
       - name: Install dependencies
-        run: Rscript requirements.R
+        run: Rscript R-CodeReasoning-Portfolio/requirements.R
 
       - name: Run tests
-        run: Rscript 05_testing_framework/test_runner.R
+        run: Rscript R-CodeReasoning-Portfolio/05_testing_framework/test_runner.R
