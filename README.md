@@ -20,21 +20,23 @@ Each folder demonstrates problem-solving across **data structures, algorithms, g
 ## 📂 Repository Structure
 
 | Folder                     | Content                                                                 |
-|-----------------------------|-------------------------------------------------------------------------|
-| `01_data_structures/`      | Implementation of core structures (Segment Tree, Union Find, etc.)      |
-| `02_algorithms/`           | Greedy, Dynamic Programming, and optimization examples                 |
-| `03_graphs/`               | Graph algorithms (Dijkstra, Topological Sort, Network Flow)             |
-| `04_number_theory/`        | Modular arithmetic, probability, geometry                               |
-| `05_testing_framework/`    | Automated validation using `testthat` and benchmarks                    |
+|----------------------------|-------------------------------------------------------------------------|
+| `01_data_structures/`      | Implementation of core structures (Segment Tree, Union Find)            |
+| `02_algorithms/`           | Greedy, Dynamic Programming examples                                    |
+| `03_graphs/`               | Graph algorithms (Dijkstra’s shortest paths)                            |
+| `04_number_theory/`        | Modular arithmetic (modular inverse)                                    |
+| `05_testing_framework/`    | Automated validation using `testthat` and micro-benchmarks              |
 | `06_problem_design/`       | YAML-based problem specifications with taxonomy, difficulty, reliability |
 
 ---
 
 ## ⚙️ Example Problems
 
-- **Segment Tree** → Fast range sum queries in `O(log n)`  
+- **Segment Tree** → Fast range sum queries in `O(log n)` and point updates  
+- **Union Find (DSU)** → Connectivity queries with path compression + union by rank  
 - **Greedy Scheduler** → Select jobs by earliest deadline while maximizing throughput  
-- **Graph Solver** → Dijkstra’s shortest path implementation  
+- **DP Pathfinding** → Minimal path sum on a grid (bottom-up DP)  
+- **Dijkstra** → Single-source shortest paths on weighted directed graphs  
 - **Modular Inverse** → Extended Euclidean Algorithm with `O(log m)` complexity  
 - **Testing Harness** → Validate solutions and benchmark runtime performance  
 
@@ -42,7 +44,33 @@ Each folder demonstrates problem-solving across **data structures, algorithms, g
 
 ## 🧪 Running the Code
 
-1. Clone this repository  
+1. **Clone**  
    ```bash
    git clone https://github.com/mrobinson102/R-CodeReasoning-Portfolio.git
    cd R-CodeReasoning-Portfolio
+   ```
+
+2. **Install dependencies**  
+   ```R
+   source("requirements.R")
+   ```
+
+3. **Run all tests**  
+   ```R
+   source("05_testing_framework/test_runner.R")
+   ```
+
+---
+
+## 🧠 About Me
+
+I’m **Michelle Goulbourne Robinson**, a Federal Data Architect & R Developer with 20+ years of experience designing algorithmic solutions, benchmarks, and mission-critical systems across **DoD, NAVSEA, USDA, and NASA**.
+
+- **Expertise:** R Programming, Algorithm Design, Benchmarking, CI/CD, Cloud Data Systems  
+- **Email:** MichelleGRobinson@hotmail.com  
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
