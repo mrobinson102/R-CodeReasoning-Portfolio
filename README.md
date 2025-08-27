@@ -74,3 +74,5 @@ I’m **Michelle Goulbourne Robinson**, a Federal Data Architect & R Developer w
 ## 📜 License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
+![R-CI](https://github.com/mrobinson102/R-CodeReasoning-Portfolio/actions/workflows/r-ci.yml/badge.svg)
