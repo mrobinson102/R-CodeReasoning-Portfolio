@@ -20,7 +20,7 @@ dijkstra_sssp <- function(edges, source) {
     # relax neighbors of u
     nbrs <- edges[as.character(edges$from) == u, ]
     if (nrow(nbrs)) {
-      for (k in seq_len(nrow(nbrs))) {
+      for (k in seq_len(nbrs |> nrow())) {
         v <- as.character(nbrs$to[k])
         w <- as.numeric(nbrs$weight[k])
         if (!visited[v] && dist[u] + w < dist[v]) {
