@@ -19,8 +19,16 @@ jobs:
         with:
           r-version: '4.3.2'
 
-      - name: Install dependencies
-        run: Rscript R-CodeReasoning-Portfolio/requirements.R
+      - name: Install base deps
+        run: Rscript -e "install.packages(c('testthat','microbenchmark','yaml'), repos='https://cloud.r-project.org')"
+
+      - name: Install project deps (requirements.R)
+        run: |
+          if [ -f requirements.R ]; then
+            Rscript requirements.R
+          else
+            echo 'No requirements.R file found, skipping'
+          fi
 
       - name: Run tests
-        run: Rscript R-CodeReasoning-Portfolio/05_testing_framework/test_runner.R
+        run: Rscript 05_testing_framework/test_runner.R
