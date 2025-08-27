@@ -67,7 +67,7 @@ Each folder demonstrates problem-solving across **data structures, algorithms, g
 I’m **Michelle Goulbourne Robinson**, a Federal Data Architect & R Developer with 20+ years of experience designing algorithmic solutions, benchmarks, and mission-critical systems across **DoD, NAVSEA, USDA, and NASA**.
 
 - **Expertise:** R Programming, Algorithm Design, Benchmarking, CI/CD, Cloud Data Systems  
-- **Email:** MichelleGRobinson@hotmail.com  
+- **Email:** MichelleGRobinson1@gmail.com
 
 ---
 
