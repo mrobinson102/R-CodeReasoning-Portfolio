@@ -7,9 +7,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -22,48 +21,15 @@ jobs:
       - name: Install base deps
         run: Rscript -e "install.packages(c('testthat','microbenchmark','yaml'), repos='https://cloud.r-project.org')"
 
-      - name: Install project deps (requirements.R)
-        run: |
-          if [ -f requirements.R ]; then
-            Rscript requirements.R
-          else
-            echo 'No requirements.R file found, skipping'
-          fi
+      - name: Install project deps (requirements.R if present)
+        run: Rscript -e "if (file.exists('requirements.R')) source('requirements.R')"
 
       - name: Run tests
         run: Rscript 05_testing_framework/test_runner.R
 
-name: R-CI
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: "4.5.1"
-
-      - name: Install base deps
-        run: Rscript -e "install.packages(c('testthat','microbenchmark','yaml'), repos='https://cloud.r-project.org')"
-
-      - name: Install project deps (requirements.R)
+      - name: Microbenchmark (segment tree)
         run: |
-          if [ -f requirements.R ]; then
-            Rscript requirements.R
-          else
-            echo 'No requirements.R file found, skipping'
-          fi
-
-      - name: Run tests
-        run: Rscript 05_testing_framework/test_runner.R
+          Rscript -e "source('01_data_structures/segment_tree.R'); \
+                      if (!requireNamespace('microbenchmark', quietly=TRUE)) install.packages('microbenchmark', repos='https://cloud.r-project.org'); \
+                      st <- build_segment_tree(1:10000); \
+                      print(microbenchmark::microbenchmark(st$query(1,5000), st$update(500, 123), times=100))"
