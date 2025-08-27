@@ -84,49 +84,32 @@ C D")),
 )
 
 server <- function(input, output, session){
-  # Segment tree
   st <- reactiveVal(NULL)
-  observeEvent(input$st_build,{
-    v <- parse_num_vec(input$st_vec); req(length(v)>0)
-    st(build_segment_tree(v))
-    output$st_status <- renderText("Built")
-  })
-  observeEvent(input$st_query,{
-    req(!is.null(st()))
-    res <- st()$query(as.integer(input$st_q_l), as.integer(input$st_q_r))
-    output$st_status <- renderText(paste("Sum =",res))
-  })
-  observeEvent(input$st_update,{
-    req(!is.null(st()))
-    st()$update(as.integer(input$st_u_idx), as.numeric(input$st_u_val))
-    output$st_status <- renderText("Updated")
-  })
+  observeEvent(input$st_build,{ v <- parse_num_vec(input$st_vec); req(length(v)>0); st(build_segment_tree(v)); output$st_status <- renderText("Built") })
+  observeEvent(input$st_query,{ req(!is.null(st())); res <- st()$query(as.integer(input$st_q_l), as.integer(input$st_q_r)); output$st_status <- renderText(paste("Sum =",res)) })
+  observeEvent(input$st_update,{ req(!is.null(st())); st()$update(as.integer(input$st_u_idx), as.numeric(input$st_u_val)); output$st_status <- renderText("Updated") })
 
-  # Union-Find
   observeEvent(input$uf_run,{
     n <- as.integer(input$uf_n); uf <- union_find_new(n)
     ops <- gsub("\\s+","",input$uf_ops)
     if (nzchar(ops)) for (p in strsplit(ops,",")[[1]]) {
-      ab <- strsplit(p,"-")[[1]]
-      if (length(ab)==2) uf$union(as.integer(ab[1]), as.integer(ab[2]))
+      ab <- strsplit(p,"-")[[1]]; if(length(ab)==2) uf$union(as.integer(ab[1]), as.integer(ab[2]))
     }
     comp <- data.frame(node=1:n, parent=sapply(1:n, uf$find))
     output$uf_tbl <- renderDT(datatable(comp, options=list(pageLength=10)))
   })
 
-  # Dijkstra
   observeEvent(input$dj_run,{
     edges <- parse_edges(input$dj_edges); req(nrow(edges)>0)
     d <- dijkstra_sssp(edges, input$dj_src)
     output$dj_tbl <- renderDT(datatable(data.frame(node=names(d), dist=as.numeric(d))))
   })
 
-  # DP Min Path
   grid <- reactiveVal(matrix(sample(1:9,9,TRUE),3,3))
   output$dp_grid <- renderDT(datatable(as.data.frame(grid()), options=list(dom='t'), rownames=FALSE))
   observeEvent(input$dp_gen,{
     m <- as.integer(input$dp_m); n <- as.integer(input$dp_n)
-    grid(matrix(sample(1:9, m*n, TRUE), m, n))
+    grid(matrix(sample(1:9,m*n,TRUE),m,n))
     output$dp_grid <- renderDT(datatable(as.data.frame(grid()), options=list(dom='t'), rownames=FALSE))
   })
   observeEvent(input$dp_run,{
@@ -134,14 +117,11 @@ server <- function(input, output, session){
     output$dp_out <- renderText(paste("Min path sum:", f(g)))
   })
 
-  # Modular inverse
   observeEvent(input$mi_run,{
     f <- if (exists("modinv")) modinv else if (exists("modular_inverse")) modular_inverse else NULL
-    req(!is.null(f))
-    output$mi_out <- renderText(paste("Inverse:", f(as.integer(input$mi_a), as.integer(input$mi_m))))
+    req(!is.null(f)); output$mi_out <- renderText(paste("Inverse:", f(as.integer(input$mi_a), as.integer(input$mi_m))))
   })
 
-  # Topological sort
   observeEvent(input$ts_run,{
     if (!exists("topological_sort")) { output$ts_out <- renderText("topological_sort.R not found."); return(NULL) }
     edges <- parse_edges(input$ts_edges)
