@@ -76,3 +76,12 @@ I’m **Michelle Goulbourne Robinson**, a Federal Data Architect & R Developer w
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
 
 ![R-CI](https://github.com/mrobinson102/R-CodeReasoning-Portfolio/actions/workflows/r-ci.yml/badge.svg)
+
+## Interactive UI (Shiny)
+Run the demos locally:
+
+```r
+source("run_app.R")
+```
+
+Tabs include **Segment Tree**, **Union–Find**, **Dijkstra**, **DP Min Path**, **Modular Inverse**, and (if present) **Topological Sort**.
