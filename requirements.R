@@ -17,3 +17,10 @@ if (length(to_install))
   install.packages(to_install, lib = lib, repos = "https://cloud.r-project.org")
 
 message("Using libs: ", paste(.libPaths(), collapse = " | "))
+
+# --- UI deps ---
+add_pkgs <- c("shiny","DT")
+missing2 <- setdiff(add_pkgs, rownames(installed.packages(lib.loc = .libPaths())))
+if (length(missing2)) {
+  install.packages(missing2, lib = lib, repos = "https://cloud.r-project.org")
+}
