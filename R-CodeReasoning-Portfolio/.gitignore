@@ -1,0 +1,14 @@
+# R
+.Rhistory
+.Rproj.user
+.RData
+.Ruserdata
+.Rapp.history
+# OS
+.DS_Store
+Thumbs.db
+# IDEs
+.vscode/
+.idea/
+# Misc
+*.zip

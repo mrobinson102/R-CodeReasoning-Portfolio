@@ -1,0 +1,14 @@
+name: Modular Inverse Finder
+category: Number Theory
+difficulty: Medium
+tags: [math, modular_arithmetic, inverse]
+problem_statement: >
+  Write an R function to compute the modular inverse of a number 'a' modulo 'm'.
+  If the inverse does not exist, return NULL. Use the Extended Euclidean Algorithm.
+constraints:
+  - 1 <= a <= 1e9
+  - 2 <= m <= 1e9
+metrics:
+  - correctness: 100%
+  - time_complexity: O(log m)
+  - reliability_score: 0.95

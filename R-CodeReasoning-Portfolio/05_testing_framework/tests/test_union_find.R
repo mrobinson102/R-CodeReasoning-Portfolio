@@ -1,0 +1,11 @@
+context('Union Find')
+source('../../01_data_structures/union_find.R')
+test_that('unions connect components', {
+  uf <- uf_create(5)
+  expect_false(uf$connected(1,2))
+  uf$union(1,2); uf$union(3,4)
+  expect_true(uf$connected(1,2))
+  expect_false(uf$connected(2,3))
+  uf$union(2,3)
+  expect_true(uf$connected(1,4))
+})
