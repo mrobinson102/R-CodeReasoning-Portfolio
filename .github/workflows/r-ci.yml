@@ -19,17 +19,22 @@ jobs:
           r-version: "4.5.1"
 
       - name: Install base deps
-        run: Rscript -e "install.packages(c('testthat','microbenchmark','yaml'), repos='https://cloud.r-project.org')"
+        run: Rscript -e 'install.packages(c("testthat","microbenchmark","yaml"), repos="https://cloud.r-project.org")'
 
       - name: Install project deps (requirements.R if present)
-        run: Rscript -e "if (file.exists('requirements.R')) source('requirements.R')"
+        run: Rscript -e 'if (file.exists("requirements.R")) source("requirements.R")'
 
       - name: Run tests
         run: Rscript 05_testing_framework/test_runner.R
 
       - name: Microbenchmark (segment tree)
+        shell: bash
         run: |
-          Rscript -e "source('01_data_structures/segment_tree.R'); \
-                      if (!requireNamespace('microbenchmark', quietly=TRUE)) install.packages('microbenchmark', repos='https://cloud.r-project.org'); \
-                      st <- build_segment_tree(1:10000); \
-                      print(microbenchmark::microbenchmark(st\\$query(1,5000), st\\$update(500, 123), times=100))"
+          Rscript - <<'RS'
+          source("01_data_structures/segment_tree.R")
+          if (!requireNamespace("microbenchmark", quietly=TRUE)) {
+            install.packages("microbenchmark", repos="https://cloud.r-project.org")
+          }
+          st <- build_segment_tree(1:10000)
+          print(microbenchmark::microbenchmark(st$query(1,5000), st$update(500, 123), times=100))
+          RS
