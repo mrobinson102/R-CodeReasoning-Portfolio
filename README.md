@@ -1,5 +1,12 @@
 # R Code Reasoning & Benchmark Portfolio 👩🏽‍💻📊
 
+## 🚀 Live Demo
+**Run it in your browser (no R/RStudio needed):**  
+👉 https://mrobinson102.shinyapps.io/r-code-reasoning-portfolio/
+
+> Tabs: Segment Tree • Union-Find • Dijkstra • DP Min Path • Modular Inverse • Topological Sort  
+> Includes `testthat` suites + GitHub Actions CI + microbenchmarks.
+
 > 🚀 Focus: Algorithm Design • Code Reasoning • Benchmarking • Test Automation  
 > 📍 Created by Michelle Goulbourne Robinson – Candidate for Turing Sr. R Engineer Role  
 
