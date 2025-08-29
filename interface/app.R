@@ -270,12 +270,21 @@ D E"),
     )
   ),
 
-  # --- Footer notice (visible in the app) ---
+  # --- Footer notice (inside fluidPage(...), after your tabs) ---
   tags$hr(),
   tags$div(
     style = "font-size:12px;color:#6b7280;margin-top:8px;",
-    HTML("&copy; 2025 Michelle Goulbourne Robinson — Portfolio Evaluation Use Only. ",
-         "No redistribution or commercial use without permission. See LICENSE.")
+    list(
+      HTML("&copy; 2025 Michelle Goulbourne Robinson — Portfolio Evaluation Use Only. 
+            No redistribution or commercial use without permission. "),
+      tags$a(
+        href = "https://github.com/mrobinson102/R-CodeReasoning-Portfolio/blob/main/LICENSE",
+        target = "_blank",
+        style  = "color:#1f6feb;text-decoration:none;",
+        "See LICENSE"
+      ),
+      HTML(".")
+    )
   )
 )
 
