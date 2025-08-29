@@ -1,3 +1,5 @@
+[![Live Demo](https://img.shields.io/badge/Shiny-Live%20Demo-1f6feb?logo=r&logoColor=white)](https://mrobinson102.shinyapps.io/r-code-reasoning-portfolio/)
+
 # R Code Reasoning & Benchmark Portfolio 👩🏽‍💻📊
 
 ## 🚀 Live Demo
