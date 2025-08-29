@@ -268,6 +268,14 @@ D E"),
       actionButton("ts_run","Sort"),
       verbatimTextOutput("ts_out")
     )
+  ),
+
+  # --- Footer notice (visible in the app) ---
+  tags$hr(),
+  tags$div(
+    style = "font-size:12px;color:#6b7280;margin-top:8px;",
+    HTML("&copy; 2025 Michelle Goulbourne Robinson — Portfolio Evaluation Use Only. ",
+         "No redistribution or commercial use without permission. See LICENSE.")
   )
 )
 
