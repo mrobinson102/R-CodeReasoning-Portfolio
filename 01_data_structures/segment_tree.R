@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 #' Segment Tree for Range Sum with Point Updates
 #' @param arr numeric vector
 #' @return list containing tree and size with query/update functions

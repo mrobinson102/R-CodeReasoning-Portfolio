@@ -1,0 +1,8 @@
+^\.git/
+^\.github/
+^05_testing_framework/
+^06_problem_design/
+^R-CodeReasoning-Portfolio\.zip$
+^uploads/
+^backup2025/
+^.*\.(docx|xlsx)$

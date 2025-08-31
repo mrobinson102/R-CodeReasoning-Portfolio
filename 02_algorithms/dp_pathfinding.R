@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 #' Minimum Path Sum on Grid (Right/Down moves)
 #' @param grid numeric matrix
 #' @return minimal path sum from (1,1) to (n,m)

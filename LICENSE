@@ -1,21 +1,25 @@
-MIT License
+Copyright (c) 2025 Michelle Goulbourne Robinson. All rights reserved.
 
-Copyright (c) 2025 Michelle Goulbourne Robinson
+Portfolio Evaluation License 1.0
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Permission is granted to individuals and organizations evaluating the author’s
+skills for the purpose of recruiting, hiring, or contracting to:
+  (a) view this repository and hosted demos,
+  (b) locally run the software for non-production, internal evaluation only.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+All other rights are reserved. Without prior written permission from the author,
+you MAY NOT:
+  • copy, modify, create derivative works from, sublicense, or redistribute
+    the code or any substantial portion thereof;
+  • use the code or derivatives in any production or commercial context;
+  • remove or alter copyright, attribution, or license notices.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Attribution: Short excerpts (≤100 lines) may be reproduced in evaluation
+materials with clear attribution to:
+  “© 2025 Michelle Goulbourne Robinson — used with permission for evaluation.”
+
+NO WARRANTY: This software is provided “AS IS”, without warranty of any kind.
+LIMITATION OF LIABILITY: In no event shall the author be liable for any claims
+or damages arising from use of the software for any purpose.
+
+For commercial or other licensing, contact: MichelleGRobinson1@gmail.com

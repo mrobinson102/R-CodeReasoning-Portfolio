@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 # Unified test runner
 suppressMessages({
   library(testthat)

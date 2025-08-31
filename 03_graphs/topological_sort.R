@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 topological_sort <- function(edges) {
   stopifnot(all(c("from","to") %in% names(edges)))
   nodes <- unique(c(as.character(edges$from), as.character(edges$to)))

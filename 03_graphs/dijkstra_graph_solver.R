@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 #' Dijkstra Single-Source Shortest Paths
 #' @param edges data.frame with columns: from, to, weight
 #' @param source starting node id (character or numeric)

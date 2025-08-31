@@ -1,3 +1,8 @@
+# -----------------------------------------------------------------------------
+# © 2025 Michelle Goulbourne Robinson. All rights reserved.
+# Licensed for non-commercial evaluation only. See LICENSE in the repo root.
+# Contact: MichelleGRobinson1@gmail.com for other licensing.
+# -----------------------------------------------------------------------------
 #' Greedy Job Scheduler by Earliest Deadline
 #' @param jobs data.frame with columns 'id' and 'deadline' (integer time slots)
 #' @return integer vector of selected job ids in scheduled order
